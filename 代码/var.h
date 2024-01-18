@@ -7,21 +7,21 @@
 using namespace std;
 struct bag{
 	string article;
-	int flag;//ÓĞÊ²Ã´ÓÃ
+	int flag;//æœ‰ä»€ä¹ˆç”¨
 	/*
-	1.´ú±í¸«Í·
-	2.´ú±í¸å×Ó
+	1.ä»£è¡¨æ–§å¤´
+	2.ä»£è¡¨ç¨¿å­
 	*/
 }s[6];
-int cnt;//±³°üÀïÃæÓĞ¶àÉÙ
+int cnt;//èƒŒåŒ…é‡Œé¢æœ‰å¤šå°‘
 struct people{
 	string name;
-	int x,y;//×ø±ê
+	int x,y;//åæ ‡
 	int blood,hungry;
 	int food;
 	int wood,rock;
 	void e(){
-		cout<<"Ä¾Í·:"<<wood<<endl<<"Ê¯Í·:"<<rock<<endl<<"Ê³Îï:"<<food<<endl;
+		cout<<"æœ¨å¤´:"<<wood<<endl<<"çŸ³å¤´:"<<rock<<endl<<"é£Ÿç‰©:"<<food<<endl;
 		for(int i=1;i<=5;i++){
 			cout<<s[i].article<<endl;
 		}
@@ -29,11 +29,11 @@ struct people{
 	}
 	void eat(){
 		system("cls");
-		if(hungry==8){
-			cout<<"ÎÒ²»¶ö"<<endl;
+		if(hungry==7){
+			cout<<"æˆ‘ä¸é¥¿"<<endl;
 		}
 		else{
-			cout<<"³ÔµôÁË"<<endl;
+			cout<<"åƒæ‰äº†"<<endl;
 			hungry++;
 			food--;
 		}
@@ -41,38 +41,38 @@ struct people{
 	void make(int x){
 		if(x==1){
 			if(wood>=3&&rock>=2&&cnt<=5){
-				cout<<"ºÏ³É³É¹¦!"<<endl;
+				cout<<"åˆæˆæˆåŠŸ!"<<endl;
 				wood-=3;
 				rock-=2;
 				cnt++;
-				cout<<"¸øÎïÆ·È¡¸öÃû×Ö:";
+				cout<<"ç»™ç‰©å“å–ä¸ªåå­—:";
 				getline(cin,s[cnt].article);
 				s[cnt].flag=1;
 			}
 			else if(cnt==6){
-				cout<<"±³°üÂúÁË"<<endl;
+				cout<<"èƒŒåŒ…æ»¡äº†"<<endl;
 			}
 			else{
-				cout<<"²ÄÁÏ²»¹»"<<endl;
+				cout<<"ææ–™ä¸å¤Ÿ"<<endl;
 			}
 			sleep(1);
 			system("cls");
 		}
 		else{
 			if(wood>=2&&rock>=3&&cnt<=5){
-				cout<<"ºÏ³É³É¹¦!"<<endl;
+				cout<<"åˆæˆæˆåŠŸ!"<<endl;
 				wood-=2;
 				rock-=3;
 				cnt++;
-				cout<<"¸øÎïÆ·È¡¸öÃû×Ö:";
+				cout<<"ç»™ç‰©å“å–ä¸ªåå­—:";
 				getline(cin,s[cnt].article);
 				s[cnt].flag=2;
 			}
 			else if(cnt==6){
-				cout<<"±³°üÂúÁË"<<endl;
+				cout<<"èƒŒåŒ…æ»¡äº†"<<endl;
 			}
 			else{
-				cout<<"²ÄÁÏ²»¹»"<<endl;
+				cout<<"ææ–™ä¸å¤Ÿ"<<endl;
 			}
 			sleep(1);
 			system("cls");
@@ -83,7 +83,7 @@ struct people{
 		s[cnt].article="";
 		s[cnt].flag=0;
 		wood++;
-		rock++;//ÒòÎª²ğÁË£¬ËùÒÔ²»ÄÜÔ­¼ÛÍË»Ø(»¬»ü)
+		rock++;//å› ä¸ºæ‹†äº†ï¼Œæ‰€ä»¥ä¸èƒ½åŸä»·é€€å›(æ»‘ç¨½)
 		return;
 	}
 };
